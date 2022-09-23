@@ -1,4 +1,4 @@
-# lab1
+# Example Day 1
 
 A new Flutter project.
 
