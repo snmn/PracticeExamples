@@ -22,7 +22,6 @@ class AppInputField extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               borderSide: const BorderSide(width: 0, style: BorderStyle.none)),
           hintStyle: const TextStyle(fontSize: 16,fontWeight: FontWeight.normal),
-
         ),
       ),
     );
