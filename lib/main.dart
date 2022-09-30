@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lab1/dashboard.dart';
 import 'package:lab1/inputs.dart';
-
 import 'custombutton.dart';
 
 void main() {
@@ -77,10 +77,12 @@ class _MyHomePageState extends State<MyHomePage> {
                      OrangeButton(
                           title: 'Sign In', onTap: (){
 
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>
+                            const Dashboard()));
                      },
                         ),
-
-                      Row(
+                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
 

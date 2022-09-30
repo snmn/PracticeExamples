@@ -12,19 +12,22 @@ class OrangeButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      padding: const EdgeInsets.all(10),
-
+    return GestureDetector(
+      onTap: ()=> onTap(),
       child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(30), color: const Color(0xffF05A28),
+        width: width,
+        padding: const EdgeInsets.all(10),
+
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30), color: const Color(0xffF05A28),
+          ),
+
+          padding: const EdgeInsets.symmetric(vertical:12.0, horizontal: 20.0),
+
+          child: Center(child: Text(title, style: const TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold),)),
+
         ),
-
-        padding: const EdgeInsets.symmetric(vertical:12.0, horizontal: 20.0),
-
-        child: Center(child: Text(title, style: const TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold),)),
-        //onPressed: onTap(),
       ),
     );
   }

@@ -1,0 +1,73 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class Dashboard extends StatefulWidget{
+  const Dashboard({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() {
+    return DashboardState();
+  }
+
+}
+class DashboardState extends State<Dashboard>{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      body: Container(
+        color: Colors.white,
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                GestureDetector(onTap:() => Navigator.pop(context) ,
+                    child: const Icon(Icons.backspace_outlined,)),
+              ],
+            ),
+           ListView.builder(
+             primary: true,
+             shrinkWrap: true,
+             itemCount: 5,
+             itemBuilder: (context,position){
+             return DemoItem();
+           },)
+          ],
+        ),
+      ),
+    );
+  }
+
+}
+
+class DemoItem extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    return SizedBox(
+      width: size.width,
+      child: Card(
+        elevation: 2,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Container(
+                  color: Colors.grey,
+                    height: 40,width: 40,
+                  ),
+                const SizedBox(width: 8,),
+                  const Text("test")
+                ],
+              )
+            ],
+          ),
+        ),
+      )
+    );
+  }
+
+}
