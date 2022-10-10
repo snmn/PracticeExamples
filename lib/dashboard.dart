@@ -13,42 +13,54 @@ class Dashboard extends StatefulWidget{
 class DashboardState extends State<Dashboard>{
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
 
       body: Container(
+        height: size.height,
+        width: size.width,
         color: Colors.white,
-        child: Column(
+        child: Stack(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                GestureDetector(onTap:() => Navigator.pop(context) ,
-                    child: const Icon(Icons.backspace_outlined,)),
-              ],
+            Positioned(
+              top: 0,
+              left: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  GestureDetector(onTap:() => Navigator.pop(context) ,
+                      child: const Icon(Icons.backspace_outlined,)),
+                ],
+              ),
             ),
-           SizedBox(
-             height: 60,
-             child: ListView.builder(
-               primary: true,
-               shrinkWrap: true,
-               scrollDirection: Axis.horizontal,
-               itemCount: 5,
-               itemBuilder: (context,position){
-               return const DemoItem();
-             },),
+            Positioned(
+              bottom: size.height/2,
+              child: SizedBox(
+               height: 60,
+               child: ListView.builder(
+                 primary: true,
+                 shrinkWrap: true,
+                 scrollDirection: Axis.horizontal,
+                 itemCount: 5,
+                 itemBuilder: (context,position){
+                 return const DemoItem();
+               },),
            ),
-            SizedBox(
-              child: GridView.builder(
-                itemCount: 100,
-                itemBuilder: (context, index) => const DemoItem(),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  childAspectRatio: 2,
-                ),
+            ),
+            Positioned(
+              bottom: 0,
+              child: SizedBox(
+                child: GridView.builder(
+                  itemCount: 100,
+                  itemBuilder: (context, index) => const DemoItem(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 2,
+                  ),
 
+                ),
               ),
             )
-
           ],
         ),
       ),
