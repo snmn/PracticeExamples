@@ -48,7 +48,7 @@ class DashboardState extends State<Dashboard>{
            ),
             ),
             Positioned(
-              bottom: 0,
+              bottom: 100,
               child: SizedBox(
                 child: GridView.builder(
                   itemCount: 100,
@@ -59,6 +59,36 @@ class DashboardState extends State<Dashboard>{
                   ),
 
                 ),
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: const [
+                       Icon(Icons.subway_sharp),
+                      Text("wer")
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+                    children: const [
+                      Icon(Icons.subway_sharp),
+                      Text("wer")
+                    ],
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: const [
+                      Icon(Icons.subway_sharp),
+                      Text("wer")
+                    ],
+                  )
+                ],
               ),
             )
           ],
