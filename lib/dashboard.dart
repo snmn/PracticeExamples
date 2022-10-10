@@ -26,13 +26,28 @@ class DashboardState extends State<Dashboard>{
                     child: const Icon(Icons.backspace_outlined,)),
               ],
             ),
-           ListView.builder(
-             primary: true,
-             shrinkWrap: true,
-             itemCount: 5,
-             itemBuilder: (context,position){
-             return DemoItem();
-           },)
+           SizedBox(
+             height: 60,
+             child: ListView.builder(
+               primary: true,
+               shrinkWrap: true,
+               scrollDirection: Axis.horizontal,
+               itemCount: 5,
+               itemBuilder: (context,position){
+               return const DemoItem();
+             },),
+           ),
+            SizedBox(
+              child: GridView.builder(
+                itemCount: 100,
+                itemBuilder: (context, index) => const DemoItem(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 2,
+                ),
+              ),
+            )
+
           ],
         ),
       ),
@@ -42,11 +57,14 @@ class DashboardState extends State<Dashboard>{
 }
 
 class DemoItem extends StatelessWidget{
+  const DemoItem({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return SizedBox(
-      width: size.width,
+      width: size.width/2.5,
+      height: 60,
       child: Card(
         elevation: 2,
         child: Padding(
