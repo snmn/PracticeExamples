@@ -1,8 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pcps.lab1">
-   <application
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
         android:label="lab1"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/logo">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
