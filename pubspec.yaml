@@ -28,6 +28,8 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   bottom_navy_bar:
+  webview_flutter: 2.0.10
+  fluttertoast: 8.0.2
   flutter:
     sdk: flutter
 

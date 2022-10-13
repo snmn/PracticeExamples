@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lab1/dashboard.dart';
 import 'package:lab1/inputs.dart';
+import 'package:lab1/webview.dart';
 import 'custombutton.dart';
 
 void main() {
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 margin: const EdgeInsets.all(20.0),
                 padding: const EdgeInsets.all(25.0),
-                height: size.height/2.6,
+                height: size.height/1.7,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all( Radius.circular(30),),
@@ -86,11 +87,16 @@ class _MyHomePageState extends State<MyHomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
 
-                          const Padding(
-                              padding: EdgeInsets.all(5.0),
-                              child: Text('Sign Up', style: TextStyle(fontSize: 12,fontWeight: FontWeight.normal),
-                            ),
+                          GestureDetector(
+                            onTap: ()=> Navigator.push(context,
+                                MaterialPageRoute(builder: (context)=>
+                                const WebView())),
+                            child: const Padding(
+                                padding: EdgeInsets.all(5.0),
+                                child: Text('WebView', style: TextStyle(fontSize: 12,fontWeight: FontWeight.normal),
+                              ),
 
+                            ),
                           ),
                           Text(' | ', style: Theme.of(context).textTheme.bodyText1),
                           const Padding(

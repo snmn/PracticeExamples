@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 class Dashboard extends StatefulWidget{
   const Dashboard({Key? key}) : super(key: key);
 
@@ -95,12 +96,20 @@ class DashboardState extends State<Dashboard>{
           ],
         ),
       ),
-        bottomNavigationBar: BottomNavyBar(
+      bottomNavigationBar: BottomNavyBar(
           selectedIndex: _selectedIndex,
           showElevation: true, // use this to remove appBar's elevation
           onItemSelected: (index) => setState(() {
             _selectedIndex = index;
-
+            Fluttertoast.showToast(
+                msg: "This is Center Short Toast",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                timeInSecForIosWeb: 1,
+                backgroundColor: Colors.red,
+                textColor: Colors.white,
+                fontSize: 16.0
+            );
           }),
           items: [
             BottomNavyBarItem(
