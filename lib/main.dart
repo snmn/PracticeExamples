@@ -54,6 +54,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Image.asset('images/logo.png', width: 180,)
                 ),
               ),
+              SizedBox(
+                height: 100,
+                width: 100,
+                child: Image.network("https://www.computerhope.com/cdn/big/computer.jpg"),
+              ),
               Container(
                 margin: const EdgeInsets.all(20.0),
                 padding: const EdgeInsets.all(25.0),
