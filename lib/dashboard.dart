@@ -25,8 +25,8 @@ class DashboardState extends State<Dashboard>{
         child: Stack(
           children: [
             Positioned(
-              top: 0,
-              left: 0,
+              top: 100,
+              left: 20,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -52,11 +52,13 @@ class DashboardState extends State<Dashboard>{
             Positioned(
               bottom: 100,
               child: SizedBox(
+                height: size.height/1.5,
+                width:size.width,
                 child: GridView.builder(
                   itemCount: 100,
                   itemBuilder: (context, index) => const DemoItem(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
+                    crossAxisCount: 1,
                     childAspectRatio: 2,
                   ),
 
@@ -159,8 +161,10 @@ class DemoItem extends StatelessWidget{
                   Container(
                   color: Colors.grey,
                     height: 40,width: 40,
+                    child: Image.network(
+                      "https://ia802304.us.archive.org/BookReader/BookReaderImages.php?zip=/34/items/flutter-apprentice/Flutter%20Apprentice%202Ed_jp2.zip&file=Flutter%20Apprentice%202Ed_jp2/Flutter%20Apprentice%202Ed_0278.jp2&id=flutter-apprentice&scale=4&rotate=0",height: 40,width: 40,),
                   ),
-                const SizedBox(width: 8,),
+                  const SizedBox(width: 8,),
                   const Text("test")
                 ],
               )
